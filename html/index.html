@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="./static/css/base.css" rel="stylesheet" type="text/css" />
+	<script id="template" type="text/template">
+		{{#each this}}
+		<tr>
+			<td>{{@index}}</td>
+			<td>
+				<a href="{{url}}" target="_blank">
+				<img src="{{avatar}}" width="100px" />
+				</a>
+			</td>
+			<td style="width:250px;">
+				<ul>
+					<li><a href="{{url}}" target="_blank">{{name}}</a></li>
+					<li>{{location}}</li>
+					<li>{{email}}</li>
+					<li><a href="{{website}}" target="_blank">{{website}}</a></li>
+					<li>{{join}}</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li> Followers : {{followers}}</li>
+					<li> Starred : {{starred}}</li>
+					<li> Following : {{following}}</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li> Sources : {{repositories.source_count}}</li>
+					{{#each repositories.source_lang}}
+					<li> {{@key}} : {{this}} </li>
+					{{/each}}
+				</ul>
+			</td>
+		</tr>
+		{{/each}}
+	</script>
+</head>
+<body>
+	<table class="ui-table" style="width:900px;margin:0 auto;margin-top:30px;">
+		<tr>
+			<td>
+				<img src="https://avatars0.githubusercontent.com/u/594141?v=3&s=460" width="100px" />
+			</td>
+			<td>
+				<ul>
+					<li>Mosky</li>
+					<li>Taiwan</li>
+					<li>mosky.tw@gmail.com</li>
+					<li>fdfd</li>
+					<li>Joined on 1 Feb 2011</li>
+				</ul>
+			</td>
+			<td>
+				<dl class="ui-dlist">
+					<dt class="ui-dlist-tit">Followers：</dt>
+    				<dd class="ui-dlist-det">3432</dd>
+    				<dt class="ui-dlist-tit">Starred：</dt>
+    				<dd class="ui-dlist-det">3432</dd>
+    				<dt class="ui-dlist-tit">Following：</dt>
+    				<dd class="ui-dlist-det">3432</dd>
+				</dl>
+			</td>
+			<td>
+				<ul>
+					<li> Sources : 3232</li>
+					<li> Python : 323 </li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<script src="static/script/seajs/2.2.0/sea-debug.js"></script>
+	<script src="static/script/seajs-style/seajs-style.js"></script>
+	<script src="static/script/config.js"></script>
+	<script type="text/javascript">seajs.use('main');</script>
+</body>
+</html>
